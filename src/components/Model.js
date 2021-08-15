@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 
 const ModelContainer = ({ modelName}) => {
   return (
-    <View>
+    <View style={styles.modelContainer}>
       <Text>{modelName}</Text>
     </View>
   )
@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   modelContainer: {
     flex: 8,
     backgroundColor: '#ddd',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   }

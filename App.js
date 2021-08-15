@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react'
 import ModelContainer from './src/components/Model';
+import Menu from './src/components/Menu';
 
 export default function App() {
   const [model, setModel] = useState("Full Skateboard")
@@ -11,6 +12,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ModelContainer modelName={model} />
+      <Menu />
     </View>
   );
 }
