@@ -7,8 +7,11 @@ import {
 import Item from './Item'
 import { partsData } from './partsData'
 import SearchInput from './SearchInput'
+import { useState } from 'react'
 
 const Search = () => {
+  const [text, onChangeText] = useState("")
+
   const handlePress = () => {
     Keyboard.dismiss()
   }
@@ -17,15 +20,24 @@ const Search = () => {
     <Item item={item}/>
   )
 
+  const searchResults = () => {
+    if (text === "") { return partsData }
+    return partsData.filter((item) => item.title.toLowerCase().includes(text.toLowerCase()))
+  }
+
   return (
       <TouchableWithoutFeedback
         onPress={handlePress}
       >
         <FlatList
           ListHeaderComponent={
-            () => <SearchInput />
+            () => <SearchInput 
+              text={text}
+              onChangeText={onChangeText}
+            />
           }
-          data={partsData}
+          style={{flex: 1}}
+          data={searchResults()}
           renderItem={renderItem}
           keyExtractor={item => item.id.toString()}
           contentContainerStyle={styles.List}

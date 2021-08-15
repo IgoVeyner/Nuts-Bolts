@@ -1,12 +1,16 @@
 import React from 'react'
+import { useRef, useEffect } from 'react'
 import { 
   View, StyleSheet, TextInput, 
   Keyboard,
 } from 'react-native'
-import { useState } from 'react'
 
-const SearchInput = () => {
-  const [text, onChangeText] = useState("")
+const SearchInput = ({ text, onChangeText }) => {
+  const input = useRef(null)
+
+  useEffect(() => {
+    input.current.focus()
+  }, [])
 
   return (
     <View 
@@ -18,6 +22,7 @@ const SearchInput = () => {
         value={text}
         placeholder={"Search"}
         onBlur={Keyboard.dismiss}
+        ref={input}
       />
     </View>
   )
