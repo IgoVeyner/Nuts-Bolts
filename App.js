@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react'
+import ModelContainer from './src/components/Model';
 
 export default function App() {
+  const [model, setModel] = useState("Full Skateboard")
+  
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
+      <ModelContainer modelName={model} />
     </View>
   );
 }
