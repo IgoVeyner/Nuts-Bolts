@@ -4,11 +4,14 @@ import { StyleSheet, View } from 'react-native';
 import ModelContainer from './Model';
 import Menu from './Menu';
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation, route }) => {
+  const { modelId } = route.params
+  console.log(modelId) 
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <ModelContainer modelName={"temp"} />
+      <ModelContainer modelId={modelId} />
       <Menu navigation={navigation}/>
     </View>
   )

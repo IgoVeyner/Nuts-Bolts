@@ -1,11 +1,19 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
 
-const Item = ({ item }) => {
+const Item = ({ item, navigation }) => {
+  const handlePress = () => {
+    navigation.navigate("Home", { 
+      modelId: item.id,
+    })
+  }
+
   return (
-    <View style={styles.ItemContainer}>
-      <Text style={styles.Item}>{item.title}</Text>
-    </View>
+    <TouchableHighlight onPress={handlePress}>
+      <View style={styles.ItemContainer}>
+        <Text style={styles.Item}>{item.title}</Text>
+      </View>
+    </TouchableHighlight>
   )
 }
 

@@ -8,7 +8,7 @@ import { partsData } from './partsData'
 import SearchInput from './SearchInput'
 import { useState } from 'react'
 
-const Search = () => {
+const Search = ({ navigation }) => {
   const [text, onChangeText] = useState("")
 
   const handlePress = () => {
@@ -16,7 +16,7 @@ const Search = () => {
   }
 
   const renderItem = ({ item }) => (
-    <Item item={item}/>
+    <Item item={item} navigation={navigation} />
   )
 
   const searchResults = () => {

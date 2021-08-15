@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const ModelContainer = ({ modelName}) => {
+const ModelContainer = ({ modelId }) => {
   return (
     <View style={styles.modelContainer}>
-      <Text>{modelName}</Text>
+      <Text>{modelId}</Text>
     </View>
   )
 }

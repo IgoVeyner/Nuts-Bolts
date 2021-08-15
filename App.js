@@ -12,7 +12,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          initialParams={
+           { modelId: 1}
+          }/>
         <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     </NavigationContainer>
