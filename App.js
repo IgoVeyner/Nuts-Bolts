@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -9,11 +10,13 @@ export default function App() {
   const [model, setModel] = useState("Full Skateboard")
   
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <ModelContainer modelName={model} />
-      <Menu />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <ModelContainer modelName={model} />
+        <Menu />
+      </View>
+    </NavigationContainer>
   );
 }
 
