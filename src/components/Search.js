@@ -1,9 +1,8 @@
 import React from 'react'
 import { 
-  View, Text, StyleSheet, TextInput, 
-  TouchableWithoutFeedback, Keyboard,
-  FlatList, ScrollView
-} from 'react-native'
+    StyleSheet, TouchableWithoutFeedback, 
+    Keyboard, FlatList
+  } from 'react-native'
 import Item from './Item'
 import { partsData } from './partsData'
 import SearchInput from './SearchInput'
