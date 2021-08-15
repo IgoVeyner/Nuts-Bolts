@@ -1,12 +1,20 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
 
 const Menu = () => {
   return (
     <View style={styles.menu}>
-      <Text style={styles.menuItem}>Settings</Text>
-      <Text style={styles.menuItem}>Search</Text>
-      <Text style={styles.menuItem}>Info</Text>
+      <TouchableHighlight style={styles.menuItem}>
+        <Text>Settings</Text>
+      </TouchableHighlight>
+      
+      <TouchableHighlight style={styles.menuItem}>
+        <Text>Search</Text>
+      </TouchableHighlight>
+
+      <TouchableHighlight style={styles.menuItem}>
+        <Text>Info</Text>
+      </TouchableHighlight>
     </View>
   )
 }
