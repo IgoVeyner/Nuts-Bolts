@@ -11,7 +11,7 @@ const ModelContainer = ({ modelName}) => {
 
 const styles = StyleSheet.create({
   modelContainer: {
-    flex: 8,
+    flex: 9,
     backgroundColor: '#ddd',
     width: '100%',
     alignItems: 'center',
