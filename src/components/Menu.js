@@ -1,19 +1,26 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
 
-const Menu = () => {
+const Menu = ({ navigation }) => {
+  const handlePress = (target) => {
+    navigation.navigate(`${target}`)
+  }
+
   return (
     <View style={styles.menu}>
       <TouchableHighlight style={styles.menuItem}>
-        <Text>Settings</Text>
+          <Text style={styles.menuText}>Settings</Text>
       </TouchableHighlight>
       
-      <TouchableHighlight style={styles.menuItem}>
-        <Text>Search</Text>
+      <TouchableHighlight 
+        style={styles.menuItem}
+        onPress={() => handlePress("Search")}
+      >
+          <Text style={styles.menuText}>Search</Text>
       </TouchableHighlight>
 
       <TouchableHighlight style={styles.menuItem}>
-        <Text>Info</Text>
+        <Text style={styles.menuText}>Info</Text>
       </TouchableHighlight>
     </View>
   )
@@ -31,8 +38,11 @@ const styles = StyleSheet.create({
 
   menuItem: {
     width: '33.3%',
-    textAlign: 'center',
   },
+
+  menuText: {
+    textAlign: 'center',
+  }
 })
 
 export default Menu
