@@ -6,7 +6,6 @@ import Menu from './Menu';
 
 const Home = ({ navigation, route }) => {
   const { modelId } = route.params
-  console.log(modelId) 
 
   return (
     <View style={styles.container}>

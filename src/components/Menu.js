@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
+import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native'
 
 const Menu = ({ navigation }) => {
   const handlePress = (target) => {
@@ -8,15 +8,20 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.menu}>
+      <TouchableHighlight style={styles.menuItem}>
+        <Text style={styles.menuText}>Info</Text>
+      </TouchableHighlight>
+      
       <TouchableHighlight 
         style={styles.menuItem}
         onPress={() => handlePress("Search")}
-      >
-          <Text style={styles.menuText}>Search</Text>
-      </TouchableHighlight>
-
-      <TouchableHighlight style={styles.menuItem}>
-        <Text style={styles.menuText}>Info</Text>
+        >
+        <View style={styles.SearchIconContainer}>
+          <Image 
+            style={styles.SearchIcon}
+            source={require('../../assets/search.png')}
+            />
+        </View>
       </TouchableHighlight>
     </View>
   )
@@ -38,6 +43,17 @@ const styles = StyleSheet.create({
 
   menuText: {
     textAlign: 'center',
+  },
+
+  SearchIcon: {
+    height: 24,
+    width: 24
+  },
+
+  SearchIconContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
 
