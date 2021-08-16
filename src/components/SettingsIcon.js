@@ -1,12 +1,23 @@
 import React from 'react'
 import { StyleSheet, TouchableHighlight, Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
-const SettingsIcon = () => {
+const SettingsIcon = ({ props }) => {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate('Settings')
+  }
+
   return (
-    <Image 
-      style={styles.SettingsIcon}
-      source={require('../../assets/settings.png')}
-    />
+    <TouchableHighlight
+      onPress={handlePress}
+    >
+      <Image 
+        style={styles.SettingsIcon}
+        source={require('../../assets/settings.png')}
+      />
+    </TouchableHighlight>
   )
 }
 

@@ -22,8 +22,8 @@ export default function App() {
            { modelId: 1}
           }
           options={{
-            headerTitle: props => <Logo {...props} />,
-            headerRight: props => <SettingsIcon {...props} />
+            headerTitle: (props) => <Logo {...props} />,
+            headerRight: (props) => <SettingsIcon props={props} />
           }}
           />
         <Stack.Screen name="Search" component={Search} />

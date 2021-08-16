@@ -1,10 +1,25 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 
 const Settings = () => {
   return (
-    <Text>Inside Settings</Text>
+    <View style={styles.Settings}>
+      <Text style={styles.SettingsText}>Inside Settings</Text>
+    </View>
   )
+}
+
+const styles = {
+  Settings: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    backgroundColor: '#ddd'
+  },
+
+  SettingsText: {
+    textAlign: 'center'
+  }
 }
 
 export default Settings
