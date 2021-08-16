@@ -35,6 +35,7 @@ const Search = ({ navigation }) => {
               onChangeText={onChangeText}
             />
           }
+          stickyHeaderIndices={[0]}
           style={{flex: 1}}
           data={searchResults()}
           renderItem={renderItem}
