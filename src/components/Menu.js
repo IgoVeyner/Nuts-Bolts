@@ -8,10 +8,6 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.menu}>
-      <TouchableHighlight style={styles.menuItem}>
-          <Text style={styles.menuText}>Settings</Text>
-      </TouchableHighlight>
-      
       <TouchableHighlight 
         style={styles.menuItem}
         onPress={() => handlePress("Search")}
@@ -37,7 +33,7 @@ const styles = StyleSheet.create({
   },
 
   menuItem: {
-    width: '33.3%',
+    width: '50%',
   },
 
   menuText: {
