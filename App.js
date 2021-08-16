@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/Home'
 import Search from './src/components/Search';
+import Logo from './src/components/Logo';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,11 @@ export default function App() {
           component={Home} 
           initialParams={
            { modelId: 1}
-          }/>
+          }
+          options={{
+            headerTitle: props => <Logo {...props} />,
+          }}
+          />
         <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     </NavigationContainer>
