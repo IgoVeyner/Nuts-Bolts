@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/Home'
 import Search from './src/components/Search';
 import Logo from './src/components/Logo';
+import SettingsIcon from './src/components/SettingsIcon';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
           }
           options={{
             headerTitle: props => <Logo {...props} />,
+            headerRight: props => <SettingsIcon {...props} />
           }}
           />
         <Stack.Screen name="Search" component={Search} />
