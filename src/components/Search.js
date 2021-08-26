@@ -4,7 +4,7 @@ import {
     Keyboard, FlatList
   } from 'react-native'
 import Item from './Item'
-import { partsData } from './partsData'
+import { partsData } from '../partsData'
 import SearchInput from './SearchInput'
 import { useState } from 'react'
 
