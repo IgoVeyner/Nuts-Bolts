@@ -9,7 +9,7 @@ const Settings = () => {
   )
 }
 
-const styles = {
+const styles = StyleSheet.create({
   Settings: {
     flex: 1,
     justifyContent: 'center',
@@ -20,6 +20,6 @@ const styles = {
   SettingsText: {
     textAlign: 'center'
   }
-}
+})
 
 export default Settings

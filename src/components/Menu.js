@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native'
+import { View, StyleSheet, TouchableHighlight, Image } from 'react-native'
 
 const Menu = ({ navigation }) => {
   const handlePress = (target) => {
@@ -8,7 +8,10 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.menu}>
-      <TouchableHighlight style={styles.menuItem}>
+      <TouchableHighlight 
+        style={styles.menuItem}
+        onPress={() => handlePress("Info")}
+        >
         <View style={styles.infoIconContainer}> 
           <Image 
             style={styles.infoIcon}
