@@ -9,18 +9,23 @@ const Menu = ({ navigation }) => {
   return (
     <View style={styles.menu}>
       <TouchableHighlight style={styles.menuItem}>
-        <Text style={styles.menuText}>Info</Text>
+        <View style={styles.infoIconContainer}> 
+          <Image 
+            style={styles.infoIcon}
+            source={require('../../assets/info.png')}
+          />
+        </View>
       </TouchableHighlight>
       
       <TouchableHighlight 
         style={styles.menuItem}
         onPress={() => handlePress("Search")}
         >
-        <View style={styles.SearchIconContainer}>
+        <View style={styles.searchIconContainer}>
           <Image 
-            style={styles.SearchIcon}
+            style={styles.searchIcon}
             source={require('../../assets/search.png')}
-            />
+          />
         </View>
       </TouchableHighlight>
     </View>
@@ -45,16 +50,27 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  SearchIcon: {
+  searchIcon: {
     height: 24,
     width: 24
   },
 
-  SearchIconContainer: {
+  infoIcon: {
+    height: 24,
+    width: 24,
+  },
+
+  searchIconContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
+
+  infoIconContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 })
 
 export default Menu
