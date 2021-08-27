@@ -47,17 +47,18 @@ const Search = ({ navigation }) => {
           data={listToDisplay}
           renderItem={renderItem}
           keyExtractor={item => item.id.toString()}
-          contentContainerStyle={styles.List}
+          contentContainerStyle={styles.list}
         />
       </TouchableWithoutFeedback>
   )
 }
 
 const styles = StyleSheet.create({
-  List: {
+  list: {
     backgroundColor: '#ddd',
     paddingBottom: 48,
-    paddingHorizontal: '5%'
+    paddingHorizontal: '5%',
+    minHeight: '100%'
   },
 })
 
