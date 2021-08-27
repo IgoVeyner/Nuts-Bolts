@@ -7,9 +7,18 @@ import Item from './Item'
 import { partsData } from '../partsData'
 import SearchInput from './SearchInput'
 import { useState } from 'react'
+import Empty from './Empty'
 
 const Search = ({ navigation }) => {
   const [text, onChangeText] = useState("")
+
+  let listToDisplay = partsData
+
+  if (text !== "") {
+    listToDisplay = partsData.filter((item) => {
+      return item.title.toLowerCase().includes(text.toLowerCase())
+    })
+  }
 
   const handlePress = () => {
     Keyboard.dismiss()
@@ -18,11 +27,6 @@ const Search = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <Item item={item} navigation={navigation} />
   )
-
-  const searchResults = () => {
-    if (text === "") { return partsData }
-    return partsData.filter((item) => item.title.toLowerCase().includes(text.toLowerCase()))
-  }
 
   return (
       <TouchableWithoutFeedback
@@ -36,8 +40,11 @@ const Search = ({ navigation }) => {
             />
           }
           stickyHeaderIndices={[0]}
+          ListFooterComponent={
+            () => listToDisplay.length > 0 ? null : <Empty />
+          }
           style={{flex: 1}}
-          data={searchResults()}
+          data={listToDisplay}
           renderItem={renderItem}
           keyExtractor={item => item.id.toString()}
           contentContainerStyle={styles.List}
